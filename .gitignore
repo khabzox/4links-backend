@@ -16,3 +16,6 @@ yarn-error.log*
 
 # Ignore the dist directory, which typically contains build output files.
 /dist
+
+# Ignore the .npmrc file which contains configuration settings for npm.
+.npmrc
