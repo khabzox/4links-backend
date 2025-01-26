@@ -1,6 +1,11 @@
 {
   "name": "4links-backend",
   "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khabzox/4links-backend.git"
+  },
+  "homepage": "https://github.com/khabzox/4links-backend#readme",
   "main": "lib/index.js",
   "scripts": {
     "start": "nodemon server.js"
@@ -12,9 +17,8 @@
   ],
   "author": "Abdelkabir",
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/khabzox/4links-backend.git"
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "license": "MIT",
   "description": "A URL shortening service",
