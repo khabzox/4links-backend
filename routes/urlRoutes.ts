@@ -1,11 +1,11 @@
 import express from "express";
-import { createUrl } from "../controllers/createUrl";
-import { readUrl } from "../controllers/readUrl";
-import { updateUrl } from "../controllers/updateUrl";
-import { deleteUrl } from "../controllers/deleteUrl";
-import { getAllUrls } from "../controllers/getAllUrls";
-import { getShortenedUrl } from "../controllers/getShortenedUrl";
-import { redirectUrl } from "../controllers/redirectUrl";
+import { createUrl } from "../controllers/createUrl.js";
+import { readUrl } from "../controllers/readUrl.js";
+import { updateUrl } from "../controllers/updateUrl.js";
+import { deleteUrl } from "../controllers/deleteUrl.js";
+import { getAllUrls } from "../controllers/getAllUrls.js";
+import { getShortenedUrl } from "../controllers/getShortenedUrl.js";
+import { redirectUrl } from "../controllers/redirectUrl.js";
 
 const router = express.Router();
 

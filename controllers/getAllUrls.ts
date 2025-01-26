@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Url from "../models/Url";
+import Url from "../models/Url.js";
 
 export const getAllUrls = async (req: Request, res: Response): Promise<void> => {
   try {

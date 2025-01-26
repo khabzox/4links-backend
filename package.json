@@ -6,7 +6,7 @@
     "url": "git+https://github.com/khabzox/4links-backend.git"
   },
   "homepage": "https://github.com/khabzox/4links-backend#readme",
-  "main": "dist/index.js",
+  "main": "dist/lib/index.js",
   "scripts": {
     "start": "nodemon dist/server.js"
   },

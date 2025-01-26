@@ -13,3 +13,6 @@ yarn-error.log*
 
 # local env files
 .env
+
+# Ignore the dist directory, which typically contains build output files.
+/dist

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Url from "../models/Url";
+import Url from "../models/Url.js";
 import shortid from "shortid";
 
 export const createUrl = async (req: Request, res: Response): Promise<void> => {

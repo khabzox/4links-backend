@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
 const UrlSchema = new mongoose.Schema({
   originalUrl: {
@@ -14,9 +14,8 @@ const UrlSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-})
+});
 
-const Url = mongoose.model("Url", UrlSchema)
+const Url = mongoose.model("Url", UrlSchema);
 
-export default Url
-
+export default Url;
