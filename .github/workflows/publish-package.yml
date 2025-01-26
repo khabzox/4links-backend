@@ -24,6 +24,7 @@ jobs:
       - name: Authenticate with npm
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          echo "@khabzox:registry=https://npm.pkg.github.com" >> ~/.npmrc
 
       # Install dependencies
       - name: Install dependencies
