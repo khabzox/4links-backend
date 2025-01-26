@@ -1,9 +1,9 @@
-export { default as connectDB } from "./db.js";
-export { setupMiddleware } from "./middleware.js";
-export { createUrl } from "../controllers/createUrl.js";
-export { readUrl } from "../controllers/readUrl.js";
-export { updateUrl } from "../controllers/updateUrl.js";
-export { deleteUrl } from "../controllers/deleteUrl.js";
-export { getAllUrls } from "../controllers/getAllUrls.js";
-export { getShortenedUrl } from "../controllers/getShortenedUrl.js";
-export { redirectUrl } from "../controllers/redirectUrl.js";
+export { default as connectDB } from "./db";
+export { setupMiddleware } from "./middleware";
+export { createUrl } from "../controllers/createUrl";
+export { readUrl } from "../controllers/readUrl";
+export { updateUrl } from "../controllers/updateUrl";
+export { deleteUrl } from "../controllers/deleteUrl";
+export { getAllUrls } from "../controllers/getAllUrls";
+export { getShortenedUrl } from "../controllers/getShortenedUrl";
+export { redirectUrl } from "../controllers/redirectUrl";

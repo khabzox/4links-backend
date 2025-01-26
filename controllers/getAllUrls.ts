@@ -1,6 +1,7 @@
-import Url from "../models/Url.js";
+import { Request, Response } from "express";
+import Url from "../models/Url";
 
-export const getAllUrls = async (req, res) => {
+export const getAllUrls = async (req: Request, res: Response): Promise<void> => {
   try {
     const urls = await Url.find();
     res.json(urls);

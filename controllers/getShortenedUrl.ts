@@ -1,6 +1,7 @@
+import { Request, Response } from "express";
 import Url from "../models/Url.js";
 
-export const getShortenedUrl = async (req, res) => {
+export const getShortenedUrl = async (req: Request, res: Response): Promise<void> => {
   const { originalUrl } = req.query;
 
   try {

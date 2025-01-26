@@ -6,9 +6,9 @@
     "url": "git+https://github.com/khabzox/4links-backend.git"
   },
   "homepage": "https://github.com/khabzox/4links-backend#readme",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon dist/server.js"
   },
   "keywords": [
     "url",
@@ -37,8 +37,10 @@
     "shortid": "^2.2.17"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.10",
+    "@types/shortid": "^2.2.0",
     "typescript": "^5.7.3"
   }
 }

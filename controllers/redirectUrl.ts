@@ -1,6 +1,7 @@
+import { Request, Response } from "express";
 import Url from "../models/Url.js";
 
-export const redirectUrl = async (req, res) => {
+export const redirectUrl = async (req: Request, res: Response): Promise<void> => {
   const { shortUrl } = req.params;
 
   try {
