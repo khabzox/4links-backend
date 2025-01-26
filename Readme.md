@@ -24,50 +24,54 @@
 ### Prerequisites
 
 - Node.js
+- Express
 - MongoDB
+- Clerk
 
 ### Installation
 
 1. Clone the repository:
-     ```sh
-     git clone https://github.com/yourusername/4links-backend.git
-     cd 4links-backend
-     ```
+
+   ```sh
+   git clone https://github.com/yourusername/4links-backend.git
+   cd 4links-backend
+   ```
 
 2. Install dependencies:
 
-    ```sh
-    npm install
-    ```
+   ```sh
+   npm install
+   ```
 
 ### Configuration
 
 1. Create a `.env` file based on the `.env.example`:
 
-    ```sh
-    cp .env.example .env
-    ```
+   ```sh
+   cp .env.example .env
+   ```
 
 2. Update the `.env` file with your MongoDB URI and other configuration settings.
 
-     ```sh
-    # MongoDB connection URI
-    MONGODB_URI=your_mongodb_uri
+   ```sh
+   # MongoDB connection URI
+   MONGODB_URI=your_mongodb_uri
 
-    # Server port
-    PORT=5000
+   # Server port
+   PORT=5000
 
-    # Clerk API keys for authentication and authorization
-    CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-    CLERK_SECRET_KEY=your_clerk_secret_key
-    ```
+   # Clerk API keys for authentication and authorization
+   CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+   CLERK_SECRET_KEY=your_clerk_secret_key
+   ```
+
 ### Running the Server
 
 1. Start the server:
 
-    ```sh
-    npm start
-    ```
+   ```sh
+   npm start
+   ```
 
 The server will be running on [http://localhost:5000](http://localhost:5000).
 
@@ -78,90 +82,90 @@ The server will be running on [http://localhost:5000](http://localhost:5000).
 - **Endpoint:** `POST /api/shorten`
 - **Description:** Creates a shortened URL.
 - **Request Body:**
-    ```json
-    {
-      "originalUrl": "https://example.com"
-    }
-    ```
+  ```json
+  {
+    "originalUrl": "https://example.com"
+  }
+  ```
 - **Response:**
-    ```json
-    {
-      "shortUrl": "abc123"
-    }
-    ```
+  ```json
+  {
+    "shortUrl": "abc123"
+  }
+  ```
 
 ### Get All URLs
 
 - **Endpoint:** `GET /api/all`
 - **Description:** Retrieves all URLs.
 - **Response:**
-    ```json
-    [
-      {
-        "originalUrl": "https://example.com",
-        "shortUrl": "abc123"
-      },
-      ...
-    ]
-    ```
+  ```json
+  [
+    {
+      "originalUrl": "https://example.com",
+      "shortUrl": "abc123"
+    },
+    ...
+  ]
+  ```
 
 ### Get a Shortened URL
 
 - **Endpoint:** `GET /api/get-short-url`
 - **Description:** Retrieves a shortened URL for a given original URL.
 - **Request Query:**
-    ```json
-    {
-      "originalUrl": "https://example.com"
-    }
-    ```
+  ```json
+  {
+    "originalUrl": "https://example.com"
+  }
+  ```
 - **Response:**
-    ```json
-    {
-      "shortUrl": "abc123"
-    }
-    ```
+  ```json
+  {
+    "shortUrl": "abc123"
+  }
+  ```
 
 ### Read a URL
 
 - **Endpoint:** `GET /api/:shortUrl`
 - **Description:** Retrieves the original URL for a given shortened URL.
 - **Response:**
-    ```json
-    {
-      "originalUrl": "https://example.com",
-      "shortUrl": "abc123"
-    }
-    ```
+  ```json
+  {
+    "originalUrl": "https://example.com",
+    "shortUrl": "abc123"
+  }
+  ```
 
 ### Update a URL
 
 - **Endpoint:** `PUT /api/:shortUrl`
 - **Description:** Updates the original URL for a given shortened URL.
 - **Request Body:**
-    ```json
-    {
-      "originalUrl": "https://newexample.com"
-    }
-    ```
+  ```json
+  {
+    "originalUrl": "https://newexample.com"
+  }
+  ```
 - **Response:**
-    ```json
-    {
-      "originalUrl": "https://newexample.com",
-      "shortUrl": "abc123"
-    }
-    ```
+  ```json
+  {
+    "originalUrl": "https://newexample.com",
+    "shortUrl": "abc123"
+  }
+  ```
 
 ### Delete a URL
 
 - **Endpoint:** `DELETE /api/:shortUrl`
 - **Description:** Deletes a shortened URL.
 - **Response:**
-    ```json
-    {
-      "message": "URL deleted"
-    }
-    ```
+  ```json
+  {
+    "message": "URL deleted"
+  }
+  ```
 
 ### Redirect to the Original URL
 
@@ -182,7 +186,17 @@ npm install 4links-backend
 
 ```javascript
 import express from "express";
-import { connectDB, setupMiddleware, createUrl, readUrl, updateUrl, deleteUrl, getAllUrls, getShortenedUrl, redirectUrl } from "4links-backend";
+import {
+  connectDB,
+  setupMiddleware,
+  createUrl,
+  readUrl,
+  updateUrl,
+  deleteUrl,
+  getAllUrls,
+  getShortenedUrl,
+  redirectUrl,
+} from "4links-backend";
 
 const app = express();
 
@@ -203,10 +217,10 @@ app.get("/r/:shortUrl", redirectUrl);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
 ```
 
 ### License
-- This project is licensed under the MIT License.
 
+- This project is licensed under the MIT License.
