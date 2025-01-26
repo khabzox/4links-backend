@@ -10,6 +10,10 @@ const UrlSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  domain: {
+    type: String,
+    default: null,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
