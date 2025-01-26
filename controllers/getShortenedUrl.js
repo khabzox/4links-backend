@@ -1,19 +1,17 @@
-import Url from "../models/Url.js"
+import Url from "../models/Url.js";
 
 export const getShortenedUrl = async (req, res) => {
-  const { originalUrl } = req.query
+  const { originalUrl } = req.query;
 
   try {
-    const url = await Url.findOne({ originalUrl })
-
+    const url = await Url.findOne({ originalUrl });
     if (url) {
-      res.json({ shortUrl: url.shortUrl })
+      res.json(url);
     } else {
-      res.status(404).json({ error: "No shortened URL found for this original URL" })
+      res.status(404).json({ error: "URL not found" });
     }
   } catch (error) {
-    console.error("Error getting shortened URL:", error)
-    res.status(500).json({ error: "Server error" })
+    console.error("Error fetching shortened URL:", error);
+    res.status(500).json({ error: "Server error" });
   }
-}
-
+};

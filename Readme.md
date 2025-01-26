@@ -5,18 +5,18 @@
 ## Table of Contents
 
 - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-    - [Configuration](#configuration)
-    - [Running the Server](#running-the-server)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Running the Server](#running-the-server)
 - [API Documentation](#api-documentation)
-    - [Create a Shortened URL](#create-a-shortened-url)
-    - [Get All URLs](#get-all-urls)
-    - [Get a Shortened URL](#get-a-shortened-url)
-    - [Read a URL](#read-a-url)
-    - [Update a URL](#update-a-url)
-    - [Delete a URL](#delete-a-url)
-    - [Redirect to the Original URL](#redirect-to-the-original-url)
+  - [Create a Shortened URL](#create-a-shortened-url)
+  - [Get All URLs](#get-all-urls)
+  - [Get a Shortened URL](#get-a-shortened-url)
+  - [Read a URL](#read-a-url)
+  - [Update a URL](#update-a-url)
+  - [Delete a URL](#delete-a-url)
+  - [Redirect to the Original URL](#redirect-to-the-original-url)
 - [License](#license)
 
 ## Getting Started
@@ -167,6 +167,45 @@ The server will be running on [http://localhost:5000](http://localhost:5000).
 
 - **Endpoint:** `GET /api/r/:shortUrl`
 - **Description:** Redirects to the original URL associated with the shortened URL.
+
+## Example Usage
+
+To use the 4Links backend package in your project, follow these steps:
+
+### Install the package:
+
+```sh
+npm install 4links-backend
+```
+
+### Import and use the functions in your project:
+
+```javascript
+import express from "express";
+import { connectDB, setupMiddleware, createUrl, readUrl, updateUrl, deleteUrl, getAllUrls, getShortenedUrl, redirectUrl } from "4links-backend";
+
+const app = express();
+
+// Connect to MongoDB
+connectDB();
+
+// Setup middleware
+setupMiddleware(app);
+
+// Define routes
+app.post("/shorten", createUrl);
+app.get("/all", getAllUrls);
+app.get("/get-short-url", getShortenedUrl);
+app.get("/:shortUrl", readUrl);
+app.put("/:shortUrl", updateUrl);
+app.delete("/:shortUrl", deleteUrl);
+app.get("/r/:shortUrl", redirectUrl);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+```
 
 ### License
 - This project is licensed under the MIT License.
