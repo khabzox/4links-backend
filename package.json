@@ -1,6 +1,6 @@
 {
   "name": "@khabzox/4links-backend",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khabzox/4links-backend.git"
@@ -18,7 +18,8 @@
   "author": "Abdelkabir",
   "type": "module",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
   },
   "dependencies": {
     "@clerk/express": "^1.0.0",
