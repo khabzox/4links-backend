@@ -12,6 +12,10 @@
   ],
   "author": "Abdelkabir",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khabzox/4links-backend.git"
+  },
   "license": "MIT",
   "description": "A URL shortening service",
   "dependencies": {
