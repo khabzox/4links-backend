@@ -1,6 +1,7 @@
-import Url from "../models/Url.js";
+import { Request, Response } from "express";
+import Url from "../models/Url";
 
-export const deleteUrl = async (req, res) => {
+export const deleteUrl = async (req: Request, res: Response): Promise<void> => {
   const { shortUrl } = req.params;
 
   try {

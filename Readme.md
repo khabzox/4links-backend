@@ -179,7 +179,7 @@ To use the 4Links backend package in your project, follow these steps:
 ### Install the package:
 
 ```sh
-npm install 4links-backend
+npm install @khabzox/4links-backend
 ```
 
 ### Import and use the functions in your project:
@@ -196,7 +196,7 @@ import {
   getAllUrls,
   getShortenedUrl,
   redirectUrl,
-} from "4links-backend";
+} from "@khabzox/4links-backend";
 
 const app = express();
 
