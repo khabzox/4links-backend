@@ -1,53 +1,173 @@
-# 4links Backend
+# 4Links Backend
 
-This is the backend service for the 4links application.
+4Links is a URL shortening service that allows users to create, manage, and track shortened URLs.
 
 ## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Contributing](#contributing)
+
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Configuration](#configuration)
+    - [Running the Server](#running-the-server)
+- [API Documentation](#api-documentation)
+    - [Create a Shortened URL](#create-a-shortened-url)
+    - [Get All URLs](#get-all-urls)
+    - [Get a Shortened URL](#get-a-shortened-url)
+    - [Read a URL](#read-a-url)
+    - [Update a URL](#update-a-url)
+    - [Delete a URL](#delete-a-url)
+    - [Redirect to the Original URL](#redirect-to-the-original-url)
 - [License](#license)
 
-## Installation
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- MongoDB
+
+### Installation
 
 1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/4links-backend.git
-    ```
-2. Navigate to the project directory:
-    ```sh
-    cd 4links-backend
-    ```
-3. Install dependencies:
+     ```sh
+     git clone https://github.com/yourusername/4links-backend.git
+     cd 4links-backend
+     ```
+
+2. Install dependencies:
+
     ```sh
     npm install
     ```
 
-## Usage
+### Configuration
 
-1. Start the development server:
+1. Create a `.env` file based on the `.env.example`:
+
+    ```sh
+    cp .env.example .env
+    ```
+
+2. Update the `.env` file with your MongoDB URI and other configuration settings.
+
+     ```sh
+    # MongoDB connection URI
+    MONGODB_URI=your_mongodb_uri
+
+    # Server port
+    PORT=5000
+
+    # Clerk API keys for authentication and authorization
+    CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+    CLERK_SECRET_KEY=your_clerk_secret_key
+    ```
+### Running the Server
+
+1. Start the server:
+
     ```sh
     npm start
     ```
-2. The server will be running at `http://localhost:3000`.
 
-## API Endpoints
+The server will be running on [http://localhost:5000](http://localhost:5000).
 
-- `GET /api/links` - Retrieve all links
-- `POST /api/links` - Create a new link
-- `GET /api/links/:id` - Retrieve a specific link by ID
-- `PUT /api/links/:id` - Update a specific link by ID
-- `DELETE /api/links/:id` - Delete a specific link by ID
+## API Documentation
 
-## Contributing
+### Create a Shortened URL
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature-branch`)
-3. Commit your changes (`git commit -m 'Add some feature'`)
-4. Push to the branch (`git push origin feature-branch`)
-5. Open a Pull Request
+- **Endpoint:** `POST /api/shorten`
+- **Description:** Creates a shortened URL.
+- **Request Body:**
+    ```json
+    {
+      "originalUrl": "https://example.com"
+    }
+    ```
+- **Response:**
+    ```json
+    {
+      "shortUrl": "abc123"
+    }
+    ```
 
-## License
+### Get All URLs
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+- **Endpoint:** `GET /api/all`
+- **Description:** Retrieves all URLs.
+- **Response:**
+    ```json
+    [
+      {
+        "originalUrl": "https://example.com",
+        "shortUrl": "abc123"
+      },
+      ...
+    ]
+    ```
+
+### Get a Shortened URL
+
+- **Endpoint:** `GET /api/get-short-url`
+- **Description:** Retrieves a shortened URL for a given original URL.
+- **Request Query:**
+    ```json
+    {
+      "originalUrl": "https://example.com"
+    }
+    ```
+- **Response:**
+    ```json
+    {
+      "shortUrl": "abc123"
+    }
+    ```
+
+### Read a URL
+
+- **Endpoint:** `GET /api/:shortUrl`
+- **Description:** Retrieves the original URL for a given shortened URL.
+- **Response:**
+    ```json
+    {
+      "originalUrl": "https://example.com",
+      "shortUrl": "abc123"
+    }
+    ```
+
+### Update a URL
+
+- **Endpoint:** `PUT /api/:shortUrl`
+- **Description:** Updates the original URL for a given shortened URL.
+- **Request Body:**
+    ```json
+    {
+      "originalUrl": "https://newexample.com"
+    }
+    ```
+- **Response:**
+    ```json
+    {
+      "originalUrl": "https://newexample.com",
+      "shortUrl": "abc123"
+    }
+    ```
+
+### Delete a URL
+
+- **Endpoint:** `DELETE /api/:shortUrl`
+- **Description:** Deletes a shortened URL.
+- **Response:**
+    ```json
+    {
+      "message": "URL deleted"
+    }
+    ```
+
+### Redirect to the Original URL
+
+- **Endpoint:** `GET /api/r/:shortUrl`
+- **Description:** Redirects to the original URL associated with the shortened URL.
+
+### License
+- This project is licensed under the MIT License.
+
