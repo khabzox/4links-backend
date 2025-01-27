@@ -19,3 +19,7 @@ yarn-error.log*
 
 # Ignore the .npmrc file which contains configuration settings for npm.
 .npmrc
+
+# Ignore the .vercel directory, which is typically used by Vercel for deployment configurations and build outputs.
+.vercel
+vercel.json

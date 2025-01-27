@@ -13,7 +13,7 @@
   "main": "dist/lib/index.js",
   "scripts": {
     "dev": "concurrently \"tsc --watch --project tsconfig.json\" \"nodemon dist/server.js\"",
-    "start": "concurrently \"tsc --project tsconfig.json\" \"node dist/server.js\"",
+    "start": "node dist/server.js",
     "build": "npx tsc --project tsconfig.json && ls -R dist"
   },
   "keywords": [
