@@ -1,5 +1,12 @@
 import mongoose from "mongoose";
 
+export interface IUrl extends Document {
+  originalUrl: string;
+  shortUrl: string;
+  password?: string;
+  createdAt: Date;
+}
+
 const UrlSchema = new mongoose.Schema({
   originalUrl: {
     type: String,
@@ -14,12 +21,16 @@ const UrlSchema = new mongoose.Schema({
     type: String,
     default: null,
   },
+  password: {
+    type: String,
+    required: false,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
   },
 });
 
-const Url = mongoose.model("Url", UrlSchema);
+const Url = mongoose.model<IUrl>("Url", UrlSchema);
 
 export default Url;
