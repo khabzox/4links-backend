@@ -12,7 +12,9 @@
   },
   "main": "dist/lib/index.js",
   "scripts": {
-    "start": "nodemon dist/server.js"
+    "dev": "tsc --watch --project tsconfig.json && nodemon dist/server.js",
+    "start": "nodemon dist/server.js",
+    "build": "tsc --project tsconfig.json"
   },
   "keywords": [
     "url",
