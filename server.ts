@@ -34,7 +34,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./lib/db.js";
 import urlRoutes from "./routes/urlRoutes.js";
-// import { clerkMiddleware } from "@clerk/express";
+import { clerkMiddleware } from "@clerk/express";
 import cluster from "cluster";
 import os from "os";
 
@@ -43,7 +43,7 @@ dotenv.config();
 const app = express();
 
 // Use Clerk middleware to handle authentication and authorization for Clerk.com
-// app.use(clerkMiddleware());
+app.use(clerkMiddleware());
 
 // Connect to MongoDB
 connectDB();
