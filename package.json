@@ -6,6 +6,10 @@
     "url": "git+https://github.com/khabzox/4links-backend.git"
   },
   "homepage": "https://github.com/khabzox/4links-backend#readme",
+  "bugs": {
+    "url": "https://github.com/khabzox/4links-backend/issues",
+    "email": "abdelkabir.ouadoukou@gmail.com"
+  },
   "main": "dist/lib/index.js",
   "scripts": {
     "start": "nodemon dist/server.js"
