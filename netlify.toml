@@ -1,4 +1,0 @@
-[build]
-  command = "npm run build"
-  publish = "dist"  # Ensure this points to the correct build output directory
-  base = "."        # Root directory
