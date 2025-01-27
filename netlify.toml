@@ -1,9 +1,4 @@
 [build]
-  # Command to run for building your project
   command = "npm run build"
-  
-  # The directory to publish (where the output is stored after build)
-  publish = "dist"
-
-  # The directory where Netlify will look for your functions (optional)
-  functions = "netlify/functions"
+  publish = "dist"  # Ensure this points to the correct build output directory
+  base = "."        # Root directory

@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "tsc --watch --project tsconfig.json && nodemon dist/server.js",
     "start": "node dist/server.js",
-    "build": "tsc --project tsconfig.json && echo 'Build Complete'"
+    "build": "tsc --project tsconfig.json && echo 'Build Complete' && ls -R dist"
   },
   "keywords": [
     "url",
