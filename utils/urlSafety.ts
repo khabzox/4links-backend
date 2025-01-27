@@ -1,3 +1,18 @@
+/**
+ * Checks the safety of a given URL using the Google Safe Browsing API.
+ *
+ * @param url - The URL to be checked for safety.
+ * @returns A promise that resolves to a boolean indicating whether the URL is safe (true) or malicious (false).
+ *
+ * @throws Will log an error and return false if the API request fails.
+ *
+ * @example
+ * ```typescript
+ * const isSafe = await checkUrlSafety("http://example.com");
+ * console.log(isSafe); // true or false
+ * ```
+ */
+
 import axios from "axios";
 
 const SAFE_BROWSING_API_KEY = process.env.SAFE_BROWSING_API_KEY;

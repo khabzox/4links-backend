@@ -1,3 +1,27 @@
+/**
+ * Express router for URL-related routes.
+ *
+ * This router handles the following routes:
+ *
+ * - POST /shorten: Create a new shortened URL.
+ * - GET /all: Retrieve all URLs.
+ * - GET /get-short-url: Retrieve a shortened URL.
+ * - GET /:shortUrl: Read a specific URL by its shortened version.
+ * - PUT /:shortUrl: Update a specific URL by its shortened version.
+ * - DELETE /:shortUrl: Delete a specific URL by its shortened version.
+ * - GET /r/:shortUrl: Redirect to the original URL using the shortened version.
+ *
+ * @module routes/urlRoutes
+ * @requires express
+ * @requires ../controllers/createUrl
+ * @requires ../controllers/readUrl
+ * @requires ../controllers/updateUrl
+ * @requires ../controllers/deleteUrl
+ * @requires ../controllers/getAllUrls
+ * @requires ../controllers/getShortenedUrl
+ * @requires ../controllers/redirectUrl
+ */
+
 import express from "express";
 import { createUrl } from "../controllers/createUrl.js";
 import { readUrl } from "../controllers/readUrl.js";
