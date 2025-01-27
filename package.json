@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "tsc --watch --project tsconfig.json && nodemon dist/server.js",
     "start": "node dist/server.js",
-    "build": "rimraf dist && tsc --project tsconfig.json && ls -R dist"
+    "build": "mkdir -p dist && rimraf dist && tsc --project tsconfig.json && ls -R dist"
   },
   "keywords": [
     "url",
